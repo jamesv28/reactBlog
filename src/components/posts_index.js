@@ -11,8 +11,8 @@ class IndexPost extends Component  {
 
   render() {
   return (
-      <div className="top">
-        <div className="col-sm-8 col-md-8">
+      <div className="top container">
+        <div className="col-sm-8 col-md-8 col-sm-offset-1 col-md-offset-1">
           <div className="well block"> lists of posts </div>
         </div>
         <div className="pull-right ">

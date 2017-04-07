@@ -6,7 +6,7 @@ class PostsNew extends Component {
     render () {
 
         return (
-            <div>
+            <div className="background row">
                 Create form
             </div>
         )
