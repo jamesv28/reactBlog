@@ -9,11 +9,29 @@ class IndexPost extends Component  {
 
   }
 
+    renderPosts() {
+        return this.props.posts.map((post) => {
+            return (
+                <div className="well" key={post.id}>
+                    <Link to={"posts/" + post.id } >
+                        <h4>{post.title}</h4>
+                        <p><strong>Categories:</strong> {post.categories}</p>
+                    </Link>
+                </div>
+            )
+        })
+    }
+
   render() {
   return (
       <div className="top container">
         <div className="col-sm-8 col-md-8 col-sm-offset-1 col-md-offset-1">
-          <div className="well block"> lists of posts </div>
+            <h2> List of Posts </h2>
+          <div className=" block">
+            <div >
+                {this.renderPosts() }
+            </div>
+          </div>
         </div>
         <div className="pull-right ">
           <Link to="/posts/new" className="btn btn-raised btn-info"> Add post </Link>
@@ -25,6 +43,13 @@ class IndexPost extends Component  {
 }
 
 
+function mapStateToProps(state) {
+    // console.log('hello' , state.posts.all);
+    return {
+        posts: state.posts.all
+    }
+}
 
 
-export default connect(null, { fetchPosts })(IndexPost);
+
+export default connect(mapStateToProps , { fetchPosts })(IndexPost);
