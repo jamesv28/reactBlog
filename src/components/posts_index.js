@@ -24,17 +24,19 @@ class IndexPost extends Component  {
 
   render() {
   return (
-      <div className="top container">
-        <div className="col-sm-8 col-md-8 col-sm-offset-1 col-md-offset-1">
-            <h2> List of Posts </h2>
-          <div className=" block">
-            <div >
-                {this.renderPosts() }
+      <div className="indexBackground">
+          <div className="top container">
+            <div className="col-sm-8 col-md-8 col-sm-offset-1 col-md-offset-1">
+                <h2 className="whiteText"> List of Posts </h2>
+              <div className=" block">
+                <div >
+                    {this.renderPosts() }
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="pull-right ">
-          <Link to="/posts/new" className="btn btn-raised btn-info"> Add post </Link>
+            <div className="pull-right ">
+              <Link to="/posts/new" className="btn btn-raised btn-info"> Add post </Link>
+            </div>
         </div>
       </div>
   )
